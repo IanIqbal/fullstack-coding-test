@@ -1,0 +1,7 @@
+1. the main fundamental operations is on the forEach loop on the first arr. as it contains some operations to determin which elements that intersect between the two arrays
+
+2. in here, the operation is executes as long as the length of the first arr, then it also executes the secondary operation to find the same element on the second arr, but it will be stopped when the element inside second arr is the same as the target on the first arr, except when there is no same element found, the second operation will then keep continue until the end of the second arr
+
+3. the dominant operation in this program is the forEach loop on the first arr, because it runs multiple times. first until the length of the first arr, second until the element on the second arr is matched with the elemen target on the first arr or until the length of the second arr if no matched is found
+
+4.in here the program is running n times as n is represented the length of the first array. then the program runs again in m times as m is represented the operations that required to run until the matched element is found or until the length of second array. If i am not mistaken the complexity of the program can be determined with O( (m*n)^2 )
