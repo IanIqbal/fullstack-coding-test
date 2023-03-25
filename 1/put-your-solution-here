@@ -3,9 +3,11 @@ function intersection(firstArr, secondArr){
 let output = []
 
 firstArr.forEach(el => {
-    if(secondArr.includes(el)){
+
+    let index = secondArr.indexOf(el)
+
+    if(index >= 0){
         output.push(el)
-        let index = secondArr.indexOf(el)
         secondArr[index] = null
     }
 })
