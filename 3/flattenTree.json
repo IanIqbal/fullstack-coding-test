@@ -1,0 +1,38 @@
+[
+   {
+      "label": 1,
+      "parent": null
+   },
+   {
+      "label": 2,
+      "parent": 1
+   },
+   {
+      "label": 3,
+      "parent": 2
+   },
+   {
+      "label": 4,
+      "parent": 2
+   },
+   {
+      "label": 5,
+      "parent": 1
+   },
+   {
+      "label": 6,
+      "parent": 1
+   },
+   {
+      "label": 7,
+      "parent": 6
+   },
+   {
+      "label": 8,
+      "parent": 6
+   },
+   {
+      "label": 9,
+      "parent": 8
+   }
+]
