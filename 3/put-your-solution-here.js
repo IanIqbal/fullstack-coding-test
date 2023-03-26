@@ -14,7 +14,7 @@ function generateTree(array) {
         } else {
 
             if (el.parent == output.label) {
-                output.children.push({ label: el.label, children: [] })
+                output.children.push({  label: el.label, children: [] })
             }
 
             if (output.children.length) {

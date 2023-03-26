@@ -19,6 +19,11 @@ const errorHandler = (err, req, res, next) =>{
             status = 401
             message = err.name
             break;
+
+        case "Unauthorized":
+            status= 401
+            message = "Please Login First"
+            break;
         default:
             break;
     }
