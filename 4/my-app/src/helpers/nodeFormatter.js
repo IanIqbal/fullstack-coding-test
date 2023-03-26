@@ -9,20 +9,19 @@ const nodeFormatter = (array) => {
     array.forEach(el => {
 
         if (!el.parent) {
-            output["label"] = el.label
-            output['name'] = el.label
+            output['name'] = el.name
             output["children"] = []
         } else {
 
-            if (el.parent == output.label) {
-                output.children.push({ label: el.label,name:el.label, children: [] })
+            if (el.parent == output.name) {
+                output.children.push({ name:el.name, children: [] })
             }
 
             if (output.children.length) {
 
                 output.children.forEach(elChildren => {
-                    if (el.parent == elChildren.label) {
-                        elChildren.children.push({ label: el.label,name:el.label, children: [] })
+                    if (el.parent == elChildren.name) {
+                        elChildren.children.push({ name:el.name, children: [] })
                     }
 
 
@@ -30,8 +29,8 @@ const nodeFormatter = (array) => {
 
                         elChildren.children.forEach(elGrandChildren => {
 
-                            if (el.parent == elGrandChildren.label) {
-                                elGrandChildren.children.push({ label: el.label,name:el.label, children: [] })
+                            if (el.parent == elGrandChildren.name) {
+                                elGrandChildren.children.push({ name:el.name, children: [] })
                             }
 
                         })
