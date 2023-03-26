@@ -5,6 +5,8 @@ import Login from "../views/Login"
 import Frontpage from "../views/Frontpage"
 import Home from "../views/Home"
 import MyOrganizations from "../views/MyOrganizations"
+import OrganizationForm from "../views/OrganizationForm"
+
 
 const router = createBrowserRouter([
     {
@@ -31,6 +33,17 @@ const router = createBrowserRouter([
                     return null
                 },
                 path: "/myorganizations"
+            },
+            {
+                element: <OrganizationForm></OrganizationForm>,
+                loader: () => {
+                    if (!localStorage.getItem("access_token")) {
+                        return redirect("/login")
+                    }
+
+                    return null
+                },
+                path: "/createorganization"
             },
             {
                 element: <Frontpage></Frontpage>,

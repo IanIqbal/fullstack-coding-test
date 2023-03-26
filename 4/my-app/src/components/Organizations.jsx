@@ -1,8 +1,10 @@
 import Tree from 'react-d3-tree';
-import { useLocation } from "react-router-dom"
+import { useLocation, useNavigate} from "react-router-dom"
 
+import "./tree.css"
 export default function Organizations({ organizations }) {
     let { pathname } = useLocation()
+    const navigate = useNavigate()
     return (
         <div style={{ textAlign: "center", marginTop: "70px" }} >
 
@@ -13,7 +15,7 @@ export default function Organizations({ organizations }) {
                 <div>
 
                     <h1> {localStorage.getItem("name")}'s Organizations' </h1>
-                    <button style={{borderRadius:"5px"}} >Create Organization</button>
+                    <button style={{ borderRadius: "5px" }} onClick={ ()=> navigate("/createorganization") } >Create Organization</button>
                 </div>
             }
 
@@ -28,7 +30,9 @@ export default function Organizations({ organizations }) {
                                 {el.User && <h3>Created By: {el.User.name}</h3>}
                                 <div id="treeWrapper" style={{ width: '100%', height: '100%', border: "2px", borderStyle: "solid" }} >
 
-                                    <Tree data={el.tidyNodes} ></Tree>
+                                    <Tree data={el.tidyNodes} rootNodeClassName="node__root"
+                                        branchNodeClassName="node__branch"
+                                        leafNodeClassName="node__leaf" ></Tree>
                                 </div>
                             </div>
                         )

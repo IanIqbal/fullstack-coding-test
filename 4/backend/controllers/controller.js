@@ -53,7 +53,7 @@ class Controller {
 
             const { UserId } = req.user
             const { name, nodes } = req.body
-
+            console.log(name, nodes);
             const organization = await OrganizationNode.create({ name, UserId }, { transaction: t })
 
 
